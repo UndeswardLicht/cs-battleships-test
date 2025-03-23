@@ -93,19 +93,18 @@ namespace Battleship.Pages
         //Since no real algorithm needed  - play randomly in existing empty squares
         public void WinningAlgorithm()
         {
-            while (GameContinues())
-            {
-                WaitForYourNextMove();
-                int x = random.Next(1, 11);
-                int y = random.Next(1, 11);
+            //while (GameContinues())
+            //{
+                int x = random.Next(0, 10);
+                int y = random.Next(0, 10);
 
                 while (!square(x,y).State.IsExist)
                 {
-                    x = random.Next(1, 11);
-                    y = random.Next(1, 11);
+                    x = random.Next(0, 10);
+                    y = random.Next(0, 10);
                 }
                 PlayInSquare(x, y);
-            }
+//            }
         }
 
        public bool WasGameWon()

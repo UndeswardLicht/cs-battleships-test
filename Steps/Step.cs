@@ -43,16 +43,23 @@ namespace Battleship.Steps
             mainPage.StartGame();
         }
 
+
+        //TODO change that method maybe?
         [When("I wait for the other person to join")]
         public void WaitForOtherPerson()
         {
-            mainPage.WaitForOpponentToAppear();
+            //mainPage.WaitForOpponentToAppear();
+            mainPage.WaitForYourNextMove();
         }
 
         [When("I use the algorithm to play the battle")]
         public void UseTheAlgorithm()
         {
-            mainPage.WinningAlgorithm();
+            while (mainPage.GameContinues())
+            {
+                mainPage.WaitForYourNextMove();
+                mainPage.WinningAlgorithm();
+            }
         }
 
         [Then("I win")]

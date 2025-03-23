@@ -11,4 +11,3 @@ Scenario: Playing the battleships and win
 	And I wait for the other person to join
 	And I use the algorithm to play the battle
 	Then I win
-	
