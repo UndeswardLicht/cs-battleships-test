@@ -1,7 +1,6 @@
 ﻿using TechTalk.SpecFlow;
 using AQB = Aquality.Selenium.Browsers;
 using AQBS = Aquality.Selenium.Browsers.AqualityServices;
-using Battleship.Utils;
 
 namespace Battleship.Hooks
 {
@@ -25,7 +24,6 @@ namespace Battleship.Hooks
         {
 
             browser.Quit();
-            Store.CleanStore();
         }
     }
 }

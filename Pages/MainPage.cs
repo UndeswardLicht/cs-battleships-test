@@ -33,7 +33,6 @@ namespace Battleship.Pages
         private ILabel waitingForOpponentLabel= ElementFactory.GetLabel(
             By.XPath("//*[@class='notifications']//*[contains(@class, 'wating-for-rival') and not(contains(@class, 'none'))]"), "waiting for opponent label");
         
-        
         private Random random = new Random();
         public MainPage() : base(By.XPath("//*[header]//*[h1]//*[contains(text(), 'Морской бой')]"), "Battleships main page")
         {
@@ -104,7 +103,7 @@ namespace Battleship.Pages
                     y = random.Next(0, 10);
                 }
                 PlayInSquare(x, y);
-//            }
+            //}
         }
 
        public bool WasGameWon()

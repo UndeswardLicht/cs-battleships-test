@@ -54,10 +54,16 @@ namespace Battleship.Steps
 
         [When("I use the algorithm to play the battle")]
         public void UseTheAlgorithm()
+        
         {
             while (mainPage.GameContinues())
             {
-                mainPage.WaitForYourNextMove();
+                //if waiting returns false => something is wrong with your turn
+                //and we have to reevaluate the game progress so far => skipping this iteration
+                if (!mainPage.WaitForYourNextMove())
+                {
+                    continue;
+                }
                 mainPage.WinningAlgorithm();
             }
         }
